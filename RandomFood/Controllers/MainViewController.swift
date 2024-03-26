@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, AddDishViewControllerDelegate {
+class MainViewController: UIViewController, AddDishViewControllerDelegate, UITableViewDataSource {
     var dishes = [Dish]()
     
     @IBAction func AddDishButton(_ sender: UIButton) {
@@ -20,13 +20,25 @@ class MainViewController: UIViewController, AddDishViewControllerDelegate {
         }
     }
     
+    @IBOutlet weak var ShowRecipesTableView: UITableView!
+    
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
+        view.addGestureRecognizer(tapGesture)
+        
+        let nib = UINib(nibName: "RecipeTableViewCell", bundle: nil)
+        ShowRecipesTableView.register(nib, forCellReuseIdentifier: "RecipeCell")
     }
 
     func didAddDish(dish: Dish) {
         dishes.append(dish)
+        ShowRecipesTableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,6 +53,21 @@ class MainViewController: UIViewController, AddDishViewControllerDelegate {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(okAction)
             present(alertController, animated: true)
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dishes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        var dish = dishes[indexPath.row]
+        return cell
     }
 
 }

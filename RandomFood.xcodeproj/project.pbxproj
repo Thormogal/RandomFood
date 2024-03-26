@@ -18,6 +18,8 @@
 		CE7693712BA9D30A0015FB99 /* RandomFoodUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7693702BA9D30A0015FB99 /* RandomFoodUITestsLaunchTests.swift */; };
 		CE76937E2BA9EA760015FB99 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76937D2BA9EA760015FB99 /* Dish.swift */; };
 		CE7693802BA9FA090015FB99 /* AddDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76937F2BA9FA090015FB99 /* AddDishViewController.swift */; };
+		CEA74BE62BB32A6B003D88DE /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA74BE52BB32A6B003D88DE /* RecipeTableViewCell.xib */; };
+		CEA74BE72BB32A6B003D88DE /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA74BE42BB32A6B003D88DE /* RecipeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		CE7693702BA9D30A0015FB99 /* RandomFoodUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomFoodUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE76937D2BA9EA760015FB99 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		CE76937F2BA9FA090015FB99 /* AddDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDishViewController.swift; sourceTree = "<group>"; };
+		CEA74BE42BB32A6B003D88DE /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		CEA74BE52BB32A6B003D88DE /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +109,10 @@
 			children = (
 				CE76934D2BA9D3060015FB99 /* AppDelegate.swift */,
 				CE76934F2BA9D3060015FB99 /* SceneDelegate.swift */,
-				CE7693512BA9D3060015FB99 /* MainViewController.swift */,
-				CE76937F2BA9FA090015FB99 /* AddDishViewController.swift */,
-				CE76937D2BA9EA760015FB99 /* Dish.swift */,
-				CE7693532BA9D3060015FB99 /* Main.storyboard */,
+				CEA74BEA2BB32ABA003D88DE /* Views */,
+				CEA74BE92BB32AA8003D88DE /* Models */,
+				CEA74BE82BB32A82003D88DE /* Controllers */,
 				CE7693562BA9D30A0015FB99 /* Assets.xcassets */,
-				CE7693582BA9D30A0015FB99 /* LaunchScreen.storyboard */,
 				CE76935B2BA9D30A0015FB99 /* Info.plist */,
 			);
 			path = RandomFood;
@@ -131,6 +133,34 @@
 				CE7693702BA9D30A0015FB99 /* RandomFoodUITestsLaunchTests.swift */,
 			);
 			path = RandomFoodUITests;
+			sourceTree = "<group>";
+		};
+		CEA74BE82BB32A82003D88DE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE7693512BA9D3060015FB99 /* MainViewController.swift */,
+				CE76937F2BA9FA090015FB99 /* AddDishViewController.swift */,
+				CEA74BE42BB32A6B003D88DE /* RecipeTableViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CEA74BE92BB32AA8003D88DE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE76937D2BA9EA760015FB99 /* Dish.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEA74BEA2BB32ABA003D88DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE7693532BA9D3060015FB99 /* Main.storyboard */,
+				CE7693582BA9D30A0015FB99 /* LaunchScreen.storyboard */,
+				CEA74BE52BB32A6B003D88DE /* RecipeTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +270,7 @@
 				CE7693572BA9D30A0015FB99 /* Assets.xcassets in Resources */,
 				CE76935A2BA9D30A0015FB99 /* Base in Resources */,
 				CE7693552BA9D3060015FB99 /* Base in Resources */,
+				CEA74BE62BB32A6B003D88DE /* RecipeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +298,7 @@
 				CE7693522BA9D3060015FB99 /* MainViewController.swift in Sources */,
 				CE76937E2BA9EA760015FB99 /* Dish.swift in Sources */,
 				CE76934E2BA9D3060015FB99 /* AppDelegate.swift in Sources */,
+				CEA74BE72BB32A6B003D88DE /* RecipeTableViewCell.swift in Sources */,
 				CE7693502BA9D3060015FB99 /* SceneDelegate.swift in Sources */,
 				CE7693802BA9FA090015FB99 /* AddDishViewController.swift in Sources */,
 			);
