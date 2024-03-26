@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="RandomFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2c1-GN-jjM">
+                                <rect key="frame" x="35" y="252.99999999999997" width="157" height="34.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="qYw-R5-W0b"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add dish"/>
+                                <connections>
+                                    <segue destination="NFI-zH-UwG" kind="presentation" identifier="addDishSegue" id="Jw1-yO-w6Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6u-ld-K0B">
+                                <rect key="frame" x="200" y="252.99999999999997" width="157" height="34.666666666666657"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Random dish"/>
+                                <connections>
+                                    <action selector="RandomDishButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H2x-op-FiJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h6u-ld-K0B" firstAttribute="leading" secondItem="2c1-GN-jjM" secondAttribute="trailing" constant="8" id="ES5-iB-0ba"/>
+                            <constraint firstItem="2c1-GN-jjM" firstAttribute="baseline" secondItem="h6u-ld-K0B" secondAttribute="baseline" id="Nfh-1Q-FAS"/>
+                            <constraint firstItem="2c1-GN-jjM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="194" id="SvI-Cf-oxh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h6u-ld-K0B" secondAttribute="trailing" constant="36" id="XhW-Ea-QzE"/>
+                            <constraint firstItem="2c1-GN-jjM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="txD-gO-Stp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="-27"/>
+        </scene>
+        <!--AddDishViewController-->
+        <scene sceneID="7nK-43-yJa">
+            <objects>
+                <viewController storyboardIdentifier="AddDishViewController" title="AddDishViewController" id="NFI-zH-UwG" customClass="AddDishViewController" customModule="RandomFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dhq-0C-I7O">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="NI9-0p-UcC">
+                                <rect key="frame" x="0.0" y="45" width="393" height="655"/>
+                                <subviews>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="center" axis="vertical" spacing="169" translatesAutoresizingMaskIntoConstraints="NO" id="19i-AR-De8">
+                                        <rect key="frame" x="137" y="8" width="119" height="639"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" scrollEnabled="NO" text="Dish name:" translatesAutoresizingMaskIntoConstraints="NO" id="Trp-bd-SWD" userLabel="dishNameTextView">
+                                                <rect key="frame" x="0.0" y="0.0" width="119" height="33"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="442-KW-hIy"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" scrollEnabled="NO" text="Dish type:" translatesAutoresizingMaskIntoConstraints="NO" id="CzL-VI-Of1" userLabel="dishTypeTextView">
+                                                <rect key="frame" x="0.0" y="202" width="119" height="33"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="1sF-jw-tfu"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" scrollEnabled="NO" text="Dish description:" translatesAutoresizingMaskIntoConstraints="NO" id="REK-FU-106" userLabel="dishDescriptionTextView">
+                                                <rect key="frame" x="0.0" y="404" width="119" height="33"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="eFx-eS-de2"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1E-K6-1ON" userLabel="saveDishButton">
+                                                <rect key="frame" x="0.0" y="606" width="119" height="33"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Save dish">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="saveDishButtonTapped:" destination="NFI-zH-UwG" eventType="touchUpInside" id="3Io-Fs-vGu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="19i-AR-De8" firstAttribute="top" secondItem="NI9-0p-UcC" secondAttribute="topMargin" id="Fg4-Vq-2qY"/>
+                                    <constraint firstItem="19i-AR-De8" firstAttribute="centerX" secondItem="NI9-0p-UcC" secondAttribute="centerX" id="O0J-ys-Ui3"/>
+                                    <constraint firstAttribute="trailing" secondItem="19i-AR-De8" secondAttribute="trailing" constant="137" id="OGM-88-faN"/>
+                                    <constraint firstAttribute="bottom" secondItem="19i-AR-De8" secondAttribute="bottom" constant="6.6666666666666288" id="mca-ta-bks"/>
+                                    <constraint firstItem="19i-AR-De8" firstAttribute="centerY" secondItem="NI9-0p-UcC" secondAttribute="centerY" id="uPo-ah-N0u"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="emf-7t-v8z"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Klx-vm-Nq0"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="afW-Yl-89P"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NI9-0p-UcC" firstAttribute="leading" secondItem="afW-Yl-89P" secondAttribute="leading" id="KO8-bh-O1U"/>
+                            <constraint firstItem="afW-Yl-89P" firstAttribute="bottom" secondItem="NI9-0p-UcC" secondAttribute="bottom" constant="142" id="aR7-xK-BOr"/>
+                            <constraint firstItem="NI9-0p-UcC" firstAttribute="centerX" secondItem="Dhq-0C-I7O" secondAttribute="centerX" id="k10-ON-9ao"/>
+                            <constraint firstItem="NI9-0p-UcC" firstAttribute="top" secondItem="afW-Yl-89P" secondAttribute="top" constant="45" id="l8X-xF-cbu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="y8H-Wq-TbX"/>
+                    <connections>
+                        <outlet property="dishDescriptionTextView" destination="REK-FU-106" id="QYJ-kb-zrh"/>
+                        <outlet property="dishNameTextView" destination="Trp-bd-SWD" id="PUA-r6-Vgf"/>
+                        <outlet property="dishTypeTextView" destination="CzL-VI-Of1" id="cvl-KK-QCC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XUd-kZ-mnS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="770.2290076335878" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
